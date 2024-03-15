@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.menu-icon {
+  font-size: 24px;
+  cursor: pointer;
+  display: block;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked + .sidenav {
+  transform: translateX(0);
+}
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: #333;
+  padding-top: 20px;
+  transition: transform 0.3s ease;
+}
+
+.sidenav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidenav li {
+  padding: 10px 20px;
+}
+
+.sidenav li a {
+  color: white;
+  text-decora
+
+
