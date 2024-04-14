@@ -1,0 +1,93 @@
+{
+    "Datos": {
+      "Matriculados": [],
+      "Trainer_Principales": [
+        {
+          "id": 1,
+          "Identificacion": "",
+          "Nombre": "",
+          "Apellido1": "",
+          "Celular": "",
+          "Telefono": "",
+          "Horario": {
+            "Clase1": "Sputnik",
+            "Clase2": "Artemis",
+            "Clase3": "Apolo",
+            "Clase4": "Sputnik"
+          }
+        },
+        {
+          "id": 2,
+          "Identificacion": "",
+          "Nombre": "",
+          "Apellido1": "",
+          "Celular": "",
+          "Telefono": "",
+          "Horario": {
+            "Clase1": "Artemis",
+            "Clase2": "Apolo",
+            "Clase3": "Sputnik",
+            "Clase4": "Artemis"
+          }
+        },
+        {
+          "id": 3,
+          "Identificacion": "",
+          "Nombre": "",
+          "Apellido1": "",
+          "Celular": "",
+          "Telefono": "",
+          "Horario": {
+            "Clase1": "Apolo",
+            "Clase2": "Sputnik",
+            "Clase3": "Artemis",
+            "Clase4": "Apolo"
+          }
+        }
+      ],
+      "Trainers_Secundarios": [
+        {
+          "id": 1,
+          "Identificacion": 125425212,
+          "Nombre": "Miguel",
+          "Apellido1": "Ackerman",
+          "Celular": 341856534,
+          "Telefono": 68945,
+          "Horario": {
+            "Clase1": "Sin asignar",
+            "Clase2": "Sin asignar",
+            "Clase3": "Sin asignar",
+            "Clase4": "Sin asignar"
+          }
+        },
+        {
+          "id": 2,
+          "Identificacion": 10156155,
+          "Nombre": "Jholmer",
+          "Apellido1": "Martinez",
+          "Celular": 3148565541,
+          "Telefono": 64185611,
+          "Horario": {
+            "Clase1": "Sin asignar",
+            "Clase2": "Sin asignar",
+            "Clase3": "Sin asignar",
+            "Clase4": "Sin asignar"
+          }
+        },
+        {
+          "id": 3,
+          "Identificacion": 120515112,
+          "Nombre": "Pedro",
+          "Apellido1": "Aguilar",
+          "Celular": 34815642,
+          "Telefono": 618481,
+          "Horario": {
+            "Clase1": "Sin asignar",
+            "Clase2": "Sin asignar",
+            "Clase3": "Sin asignar",
+            "Clase4": "Sin asignar"
+          }
+        }
+      ]
+    }
+  }

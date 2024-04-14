@@ -1,0 +1,64 @@
+{
+    "Salones": {
+      "1": {
+        "Ruta": "Java",
+        "Profesor": "",
+        "Alumnos": []
+      },
+      "2": {
+        "Ruta": "NodeCore",
+        "Profesor": "",
+        "Alumnos": []
+      },
+      "3": {
+        "Ruta": "NetCore",
+        "Profesor": "",
+        "Alumnos": []
+      },
+      "4": {
+        "Ruta": "Java",
+        "Profesor": "",
+        "Alumnos": []
+      },
+      "5": {
+        "Ruta": "NodeCore",
+        "Profesor": "",
+        "Alumnos": []
+      },
+      "6": {
+        "Ruta": "NetCore",
+        "Profesor": "",
+        "Alumnos": []
+      },
+      "7": {
+        "Ruta": "Java",
+        "Profesor": "",
+        "Alumnos": []
+      },
+      "8": {
+        "Ruta": "NodeCore",
+        "Profesor": "",
+        "Alumnos": []
+      },
+      "9": {
+        "Ruta": "NetCore",
+        "Profesor": "",
+        "Alumnos": []
+      },
+      "10": {
+        "Ruta": "Java",
+        "Profesor": "",
+        "Alumnos": []
+      },
+      "11": {
+        "Ruta": "NodeCore",
+        "Profesor": "",
+        "Alumnos": []
+      },
+      "12": {
+        "Ruta": "NetCore",
+        "Profesor": "",
+        "Alumnos": []
+      }
+    }
+  }
