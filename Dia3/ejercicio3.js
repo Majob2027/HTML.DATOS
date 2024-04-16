@@ -6,6 +6,16 @@ function longestCommonPrefix(strs) {
   const lastStr = strs[strs.length - 1];
   let idx = 0;
 
+  if (firstStr > 200 || firstStr<0) 
+  {
+    console.log("Error")
+  }
+  if (lastStr > 200 || lastStr<0) 
+  {
+    console.log("Error")
+  }
+  
+
   while (idx < firstStr.length && idx < lastStr.length) {
     if (firstStr.charAt(idx) === lastStr.charAt(idx)) {
       idx++;
@@ -17,9 +27,11 @@ function longestCommonPrefix(strs) {
   return firstStr.substring(0, idx);
 }
 
-let palabras= prompt ("ingrese la cantidad de palabras a guardar")
-let strs= []
-for (let i of palabras){
-    strs = input ("ingrese la palabra #" , {i})
+let palabras = prompt("Ingrese la cantidad de palabras a guardar");
+let strs = [];
+
+for (let i = 0; i < palabras; i++) {
+  strs.push(prompt(`Ingrese la palabra #${i + 1}`));
 }
-longestCommonPrefix(strs)
+
+alert("Prefijo común más largo: " + longestCommonPrefix(strs));
