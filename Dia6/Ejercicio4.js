@@ -1,48 +1,50 @@
-class CuentaBancaria {
-    constructor(saldo, Ncuenta) {
+class CuentaBancaria{
+    constructor (Ncuenta, saldo){
         this.Ncuenta = Ncuenta;
         this.saldo = saldo;
     }
 
-    depositar(cantidad) {
-        if (cantidad > 0) {
-            this.saldo += cantidad; 
-            console.log(`Se depositaron ${cantidad} unidades. Nuevo saldo: ${this.saldo}`);
-        } else {
-            console.log("La cantidad a depositar debe ser mayor que 0.");
+    Depositar(ingreso){
+        if (ingreso > 0){
+            console.log (this.saldo + ingreso);
         }
     }
-
-    retirar(retiro) {
-        if (retiro > 0 && retiro <= this.saldo) { 
-            this.saldo -= retiro; 
-            console.log(`Se retiraron ${retiro} unidades. Nuevo saldo: ${this.saldo}`);
-        } else {
-            console.log("No tienes fondos suficientes para retirar esa cantidad de dinero");
+    Retiro(retiro){
+        if (retiro > 0 && retiro <= this.saldo){
+            console.log (this.saldo - retiro);
         }
     }
 }
 
-let Ncuenta = prompt("Ingrese su número de cuenta: ");
-let saldoInicial = 0; // Se inicializó el saldo en 0
-const cuenta = new CuentaBancaria(saldoInicial, Ncuenta);
+let Numero = parseInt(prompt("Ingresa el numero de cuenta:"));
+let SaldoInicial = parseInt(prompt("Ingrese el saldo Inicial de su cuenta:"));
+let cuenta = new CuentaBancaria(Numero, SaldoInicial);
+if (Numero > 0){
+    while(true){
+        console.log("1. Depositar dinero");
+        console.log("2. Retirar dinero");
+        console.log("3. Observar tu Numero de cuenta")
+        console.log("4. Observar tu sueldo");
+        console.log("5. salir")
+        let opcion = parseInt(prompt("Escge que deseas hacer:"));
 
-while (true) {
-    console.log("¿Qué deseas hacer?");
-    console.log("1 = Depositar dinero");
-    console.log("2 = Retirar dinero");
+        if (opcion == 1){
+            let ingreso = parseInt(prompt("Ingresa la cantidad que deseas depositas:"))
+            cuenta.Depositar(ingreso);
+        }else if (opcion == 2){
+            let retiro = parseInt(prompt("Ingresa la cantidad que seas retirar"))
+            cuenta.Retiro(retiro);
+        }else if (opcion == 3){
+            console.log (cuenta.Ncuenta)
+        }else if (opcion == 4){
+            console.log (cuenta.saldo)
+        }else if (opcion == 5){
+            break;
+        }else{
+            console.log("Opcion invalida")
+        }
 
-    let decision = (prompt("Ingrese el número de la operación que desea realizar: "));
-
-    if (decision === 1) {
-        let cantidad = (prompt("Ingrese la cantidad de dinero que desea depositar: "));
-        cuenta.depositar(cantidad);
-    } else if (decision === 2) {
-        let cantidad = (prompt("Ingrese la cantidad de dinero que desea retirar: "));
-        cuenta.retirar(cantidad);
-    } else {
-        console.log("Operación no válida. Por favor, ingrese 1 para depositar dinero o 2 para retirar dinero.");
     }
+}else{
+    console.log("El numero no es un numero positivo")
 }
-
-
