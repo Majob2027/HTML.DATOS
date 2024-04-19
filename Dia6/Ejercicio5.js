@@ -23,7 +23,7 @@ class Triangulo extends Forma {
     }
 
     calcularArea() {
-        return 0.5 * this.base * this.altura;
+        return  this.base * this.altura/2;
     }
 }
 
