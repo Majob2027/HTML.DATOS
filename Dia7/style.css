@@ -1,0 +1,45 @@
+
+
+.titulo{
+    color: rgb(34, 64, 90);
+    text-align: center;
+    font-family: cursive;
+    font-size: 5vi;
+
+}
+.btn{
+    background-color: rgb(111, 143, 172);
+    text-decoration: none;
+    border-color: rgb(203, 234, 235);
+    margin-top: 10vi;
+    margin-left:21vi ;
+    font-size: 2vi;
+}
+.texto1{
+    color: black;
+    font-family: cursive;
+    text-align: center ;
+    margin-top: 3vi;
+}
+.texto2{
+    color: black;
+    font-family: cursive;
+    text-align: center ;
+    margin-top: 5vi;
+}
+.input1{
+    align-items: center;
+    border-color: white;
+    margin-left: 25vi;
+    margin-top: 1vi;
+
+}
+.cuadro1 {
+    width: 60vi;           
+    height: 45vi;         
+    background: rgb(255, 255, 255);       
+    border: 1px solid #ffffff; 
+    margin-left: 20vi;
+    margin-top: 2vi;
+    z-index: -1;
+  }
