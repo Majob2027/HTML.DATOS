@@ -26,12 +26,14 @@
     font-family: cursive;
     text-align: center ;
     margin-top: 5vi;
+    margin-left: 8vi;
 }
 .input1{
     align-items: center;
     border-color: white;
-    margin-left: 25vi;
-    margin-top: 1vi;
+    font-family: cursive;
+    margin-left: 18vi;
+    margin-top: 2vi;
 
 }
 .cuadro1 {
@@ -42,4 +44,12 @@
     margin-left: 20vi;
     margin-top: 2vi;
     z-index: -1;
+    font-family: cursive;
   }
+
+.info{
+    margin-top: 2.5vi;
+    text-align: center;
+    font-family: cursive;
+}
+
