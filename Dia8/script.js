@@ -48,7 +48,7 @@ document.getElementById('apiForm').addEventListener('submit', function(e) {
         })
         .catch(error => {
             console.error('Error al consultar el API:', error);
-            document.getElementById('result').innerHTML = 'Error al buscar. plis, trate de nuevo.';
+            document.getElementById('result').innerHTML = ' ERROR GALACTICO POR FAVOR ELIJA UN PERSONAJE DE NUEVO';
         });
 });
 message.txt

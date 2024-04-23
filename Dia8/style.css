@@ -1,0 +1,26 @@
+@font-face {
+    font-family: starwars;
+    src: url(/Dia8/fuentes/Starjout.ttf);
+}
+@font-face {
+    font-family: starwars2;
+    src: url(/Dia8/fuentes/STARWARS.TTF);
+}
+.titulo{
+    position: absolute;
+    font-family: starwars;
+    color: yellow;
+    top: 2vi;
+    left: 20vi;
+    font-size: 10vi;
+}
+.texto1{
+    position: absolute;
+    font-family: starwars;
+    color: white ;
+    top: 18vi;
+    left: 20vi;
+    font-size: 2vi;
+
+}
+
