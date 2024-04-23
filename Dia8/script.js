@@ -8,23 +8,23 @@ document.getElementById('apiForm').addEventListener('submit', function(e) {
         .then(data => {
             const template = `
                 <h2>${data.name}</h2>
-                <p><strong>Altura:</strong> ${data.height}</p>
-                <p><strong>Peso:</strong> ${data.mass}</p>
-                <p><strong>Color de pelo:</strong> ${data.hair_color}</p>
-                <p><strong>Color de piel:</strong> ${data.skin_color}</p>
-                <p><strong>Color de ojos:</strong> ${data.eye_color}</p>
-                <p><strong>Año en que nacio:</strong> ${data.birth_year}</p>
-                <p><strong>Género:</strong> ${data.gender}</p>
-                <p><strong>Mundo de donde nacio:</strong></p>
+                <p><strong>Height:</strong> ${data.height}</p>
+                <p><strong>mass:</strong> ${data.mass}</p>
+                <p><strong>Hair color:</strong> ${data.hair_color}</p>
+                <p><strong>skin color:</strong> ${data.skin_color}</p>
+                <p><strong>eye color:</strong> ${data.eye_color}</p>
+                <p><strong>Birthday:</strong> ${data.birth_year}</p>
+                <p><strong>Gender:</strong> ${data.gender}</p>
+                <p><strong>Born world:</strong></p>
                 <ul id="homeworldInfo"></ul>
-                <p><strong>Películas:</strong></p>
+                <p><strong>Movies:</strong></p>
                 <ul id="filmsList"></ul>
-                <p><strong>Especies:</strong></p>
+                <p><strong>Species:</strong></p>
                 <ul id="speciesList"></ul>
                 <p><strong>Naves:</strong></p>
                 <ul id="starshipsList"></ul>
-                <p><strong>fecha de creacion:</strong> ${data.created}</p>
-                <p><strong>fecha de ultima modificacion:</strong> ${data.edited}</p>
+                <p><strong>cCreated:</strong> ${data.created}</p>
+                <p><strong>last edited:</strong> ${data.edited}</p>
                 <p><strong>URL:</strong> ${data.url}</p>
             `;
 
@@ -48,8 +48,10 @@ document.getElementById('apiForm').addEventListener('submit', function(e) {
         })
         .catch(error => {
             console.error('Error al consultar el API:', error);
-            document.getElementById('result').innerHTML = ' ERROR GALACTICO POR FAVOR ELIJA UN PERSONAJE DE NUEVO';
+            document.getElementById('result').innerHTML = ' error galactico por favor elija un nuevo personaje';
         });
+
+        
 });
 message.txt
 

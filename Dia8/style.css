@@ -19,8 +19,54 @@
     font-family: starwars;
     color: white ;
     top: 18vi;
-    left: 20vi;
+    left: 32vi;
     font-size: 2vi;
 
 }
+
+.img1{
+    position: absolute;
+    top: 10vi;
+    left: 5vi;
+    transform: rotate(25deg);
+}
+.img2{
+    position: absolute;
+    top: 12vi;
+    left: 80vi;
+    transform: rotate(-25deg);
+}
+.img3{
+    position: absolute;
+    top: 30vi;
+    left: 7vi;
+    transform: rotate(-10deg);
+}
+
+.img5{
+    position: absolute;
+    top: 35vi;
+    left: 75vi;
+    transform: rotate(35deg);
+}
+
+
+#result ul {
+    list-style: none;
+    padding: 0;
+    text-align: left; 
+}
+
+#result ul li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 25px;
+}
+
+#result ul li::before {
+    content: "\2022"; 
+    left: 0;
+    color: white; 
+}
+
 
