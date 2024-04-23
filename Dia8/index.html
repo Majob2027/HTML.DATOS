@@ -1,20 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fetch Super Hero</title>
-    <link rel="stylesheet" href="/Dia8/style.css">
+    <title>STARWARS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 20vh;
+        }
+    </style>
 </head>
-<body  class="fondo" style="background-color: black;">
 
-    <h1 style="color: white;"> Informacion</h1>
-    <div id="people" style="color: white;"></div>
-    <div id="mundos" style="color: rgb(255, 34, 34);"></div>
+<body>
+    <div class="img"> <img src="Star_Wars_Logo.svg.png" alt="120" height="220px" width="280px"></div>
+    <div class="container mt-5">
+        <h1>BUSCA TU PERSONAJE DE STAR WARS</h1>
+        <form id="apiForm">
+            <div class="form-group">
+                <label for="idInput">Ingresa un ID de la siguiente manera (people/4):</label>
+                <input type="text" class="form-control" id="idInput" placeholder="ID">
+            </div>
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+        <div id="result" class="mt-3"></div>
+    </div>
 
-   
+    <script src="main.js"></script>
 </body>
-
-<script src="/Dia8/script.js"></script>
 
 </html>
