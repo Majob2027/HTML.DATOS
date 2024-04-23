@@ -12,21 +12,23 @@
     text-decoration: none;
     border-color: rgb(203, 234, 235);
     margin-top: 10vi;
-    margin-left:21vi ;
+    margin-left:22vi ;
     font-size: 2vi;
 }
 .texto1{
     color: black;
-    font-family: cursive;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center ;
     margin-top: 3vi;
+    font-size: 2vi;
 }
 .texto2{
     color: black;
-    font-family: cursive;
+    font-family:cursive;
     text-align: center ;
     margin-top: 5vi;
     margin-left: 8vi;
+    font-size: 2vi;
 }
 .input1{
     align-items: center;
@@ -45,11 +47,13 @@
     margin-top: 2vi;
     z-index: -1;
     font-family: cursive;
+    font-size: 2vi;
   }
 
 .info{
     margin-top: 2.5vi;
     text-align: center;
     font-family: cursive;
+    font-size: 2vi;
 }
 

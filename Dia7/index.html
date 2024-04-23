@@ -10,16 +10,14 @@
 <body style="background-color: #39457e";>
    
     <div class="cuadro1">
-        <h1 class="titulo">Super heroe</h1>
+        <h1 class="titulo" style="font-family: cursive;">Super heroe</h1>
         <div for="heroId" class="texto1"> Elige qué deseas consultar:</div> 
-        <!-- Dropdown utilizando la nueva sintaxis de Bootstrap 5 -->
         <div class="dropdown">
-            <!-- Aplicar márgenes izquierdo y derecho a los botones -->
-            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="margin-top: 3vi; margin-left: 20vi;background-color: rgb(106, 152, 206); align-items: center;">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="margin-top: 3vi; margin-left: 20vi;background-color: rgb(106, 152, 206); align-items: center;font-family: cursive;">
                 Escoja una opcion 
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" href="#" onclick="(this)">Ver todos</a></li>
+                <li><a class="dropdown-item" href="#" onclick="displayAllHeroes(this)">Ver todos</a></li>
                 <li><a class="dropdown-item" href="#" onclick="actualizarTitulo(this)">Id</a></li>
                 <li><a class="dropdown-item" href="#" onclick="actualizarTitulo(this)">Powerstats</a></li>
                 <li><a class="dropdown-item" href="#" onclick="actualizarTitulo(this)">Biography</a></li>
@@ -33,7 +31,7 @@
         <label for="heroId" class="texto2 "> Ingresa el id de heroe  que deseas consultar: </label>
         <input class="input1" type="number" id="heroId" value="70" min="1" max="731"></input>
         <button onclick="fetchSuperHero()">Obtener mi heroe</button>
-        <button onclick="fetchSuperHero()">Ver todos </button>
+        <button onclick="displayAllHeroes()">Ver todos </button>
         <div id="superHeroInfo" class="info">
     
        </div>

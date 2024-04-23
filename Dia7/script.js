@@ -41,3 +41,105 @@ function displayAllHeroes(data) {
         heroInfo.innerHTML = names.join("");
     }
 }
+
+function powerHero() {
+    let heroID = document.getElementById("heroId").value;
+    let apikey = "487f7b22f68312d2c1bbc93b1aea445b"
+    let url =` https://superheroapi.com/api.php/${apikey}/${heroID}`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            let powers = data.powerstats;
+            let powersHTML = '<p>Poderes:</p><ul>';
+            for (let power in powers) {
+                powersHTML += `<li>${power}: ${powers[power]}</li>`;
+            }
+            document.getElementById('superHeroPower').innerHTML = powersHTML;
+        })
+        .catch(error => console.error('Error fetching powers:', error));
+}
+
+function biografhyHero() {
+    let heroID = document.getElementById("heroId").value;
+    let apikey = "487f7b22f68312d2c1bbc93b1aea445b"
+    let url =` https://superheroapi.com/api.php/${apikey}/${heroID}`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            let biografhys = data.biografhy;
+            let powersHTML = '<p>Biografia:</p><ul>';
+            for (let biografhy in biografhys) {
+                powersHTML += `<li>${biografhy}: ${biografhys[biografhy]}</li>`;
+            }
+            document.getElementById('superHeroBiografhy').innerHTML = powersHTML;
+        })
+        .catch(error => console.error('Error fetching biografhy:', error));
+}
+
+function AppearanceHero() {
+    let heroID = document.getElementById("heroId").value;
+    let apikey = "487f7b22f68312d2c1bbc93b1aea445b"
+    let url =` https://superheroapi.com/api.php/${apikey}/${heroID}`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            let Appearances = data.Appearance;
+            let powersHTML = '<p>Appearance:</p><ul>';
+            for (let Appearance in Appearances) {
+                powersHTML += `<li>${Appearance}: ${Appearances[Appearance]}</li>`;
+            }
+            document.getElementById('superHeroAppearance').innerHTML = powersHTML;
+        })
+        .catch(error => console.error('Error fetching Appearance:', error));
+}
+
+function WorkHero() {
+    let heroID = document.getElementById("heroId").value;
+    let apikey = "487f7b22f68312d2c1bbc93b1aea445b"
+    let url =` https://superheroapi.com/api.php/${apikey}/${heroID}`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            let Work = data.Work;
+            let powersHTML = '<p> Work:</p><ul>';
+            for (let Works in Work) {
+                powersHTML += `<li>${Works}: ${Work[Works]}</li>`;
+            }
+            document.getElementById('superHeroWork').innerHTML = powersHTML;
+        })
+        .catch(error => console.error('Error fetching Connections:', error));
+}
+
+function connectionsHero() {
+    let heroID = document.getElementById("heroId").value;
+    let apikey = "487f7b22f68312d2c1bbc93b1aea445b"
+    let url =` https://superheroapi.com/api.php/${apikey}/${heroID}`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            let Connections = data.Connections;
+            let powersHTML = '<p> Work:</p><ul>';
+            for (let Works in Connections) {
+                powersHTML += `<li>${Works}: ${Connections[Works]}</li>`;
+            }
+            document.getElementById('superHero').innerHTML = powersHTML;
+        })
+        .catch(error => console.error('Error fetching Connections:', error));
+}
+
+function ImageHero() {
+    let heroID = document.getElementById("heroId").value;
+    let apikey = "487f7b22f68312d2c1bbc93b1aea445b"
+    let url =` https://superheroapi.com/api.php/${apikey}/${heroID}`;
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            let Connections = data.Connections;
+            let powersHTML = '<p> Work:</p><ul>';
+            for (let Works in Connections) {
+                powersHTML += `<li>${Works}: ${Connections[Works]}</li>`;
+            }
+            document.getElementById('superHero').innerHTML = imageHTML;
+        })
+        .catch(error => console.error('Error fetching Connections:', error));
+}
