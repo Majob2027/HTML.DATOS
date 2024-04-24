@@ -1,7 +1,7 @@
 document.getElementById('apiForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const id = document.getElementById('idInput').value;
-    const apiUrl = 'https://swapi.py4e.com/api/';
+    const apiUrl = 'https://swapi.py4e.com/api/people';
 
     fetch(apiUrl + '/' + id)
         .then(response => response.json())
@@ -23,7 +23,7 @@ document.getElementById('apiForm').addEventListener('submit', function(e) {
                 <ul id="speciesList"></ul>
                 <p><strong>Naves:</strong></p>
                 <ul id="starshipsList"></ul>
-                <p><strong>cCreated:</strong> ${data.created}</p>
+                <p><strong>Created:</strong> ${data.created}</p>
                 <p><strong>last edited:</strong> ${data.edited}</p>
                 <p><strong>URL:</strong> ${data.url}</p>
             `;

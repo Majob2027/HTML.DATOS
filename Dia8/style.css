@@ -21,7 +21,10 @@
     top: 18vi;
     left: 32vi;
     font-size: 2vi;
+}
 
+.container{
+    text-align: center;
 }
 
 .img1{
@@ -54,19 +57,21 @@
 #result ul {
     list-style: none;
     padding: 0;
-    text-align: left; 
+    text-align: center;
 }
 
 #result ul li {
     margin-bottom: 5px;
     position: relative;
     padding-left: 25px;
+    text-align: center;
 }
 
 #result ul li::before {
     content: "\2022"; 
     left: 0;
     color: white; 
+    text-align: center;
 }
 
 
