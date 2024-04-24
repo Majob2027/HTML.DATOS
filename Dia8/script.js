@@ -1,7 +1,11 @@
-
 const fetchAndDisplayInfo = (url, listId) => {
     fetch(url)
         .then(response => response.json())
+        .then(info => {
+            const infoItem = document.createElement('li');
+            infoItem.textContent = info.name || info.title;
+            document.getElementById(listId).appendChild(infoItem);
+        })
         .catch(error => console.error('Error al obtener info:', error));
 };
 
@@ -14,33 +18,76 @@ const handleSubmit = (e) => {
     e.preventDefault(); 
 
     const id = document.getElementById('idInput').value;
+
     const apiUrl = 'https://swapi.py4e.com/api/people';
+
     fetch(apiUrl + '/' + id)
         .then(response => response.json()) 
         .then(data => {
-           
             const template = `
-                <h2>${data.name}</h2>
-                <p><strong>Height:</strong> ${data.height}</p>
-                <p><strong>Mass:</strong> ${data.mass}</p>
-                <p><strong>Hair color:</strong> ${data.hair_color}</p>
-                <p><strong>Skin color:</strong> ${data.skin_color}</p>
-                <p><strong>Eye color:</strong> ${data.eye_color}</p>
-                <p><strong>Birthday:</strong> ${data.birth_year}</p>
-                <p><strong>Gender:</strong> ${data.gender}</p>
-                <p><strong>Homeworld:</strong></p>
-                <ul id="homeworldInfo"></ul>
-                <p><strong>Movies:</strong></p>
-                <ul id="filmsList"></ul>
-                <p><strong>Species:</strong></p>
-                <ul id="speciesList"></ul>
-                <p><strong>Starships:</strong></p>
-                <ul id="starshipsList"></ul>
-                <p><strong>Created:</strong> ${data.created}</p>
-                <p><strong>Last edited:</strong> ${data.edited}</p>
-                <p><strong>URL:</strong> ${data.url}</p>
+                <table class="table table-bordered border-white table-dark-transparent">
+                <tr>
+                <th class="text-white"><strong>Name:</strong></th>
+                <td class="text-white">${data.name}</td>
+                </tr> 
+                <tr>
+                <th class="text-white"><strong>Height:</strong></th>
+                <td class="text-white">${data.height}</td>
+                </tr> 
+                <tr>
+                <th class="text-white"><strong>Mass:</strong></th>
+                <td class="text-white">${data.mass}</td>
+                </tr>
+                <tr>
+                <th class="text-white"><strong>Hair color:</strong></th>
+                <td class="text-white">${data.hair_color}</td>
+                </tr>
+                <tr>
+                <th class="text-white"><strong>Skin color:</strong></th>
+                <td class="text-white">${data.skin_color}</td>
+                </tr>
+                <tr>
+                <th class="text-white"><strong>Eye color:</strong></th>
+                <td class="text-white">${data.eye_color}</td>
+                </tr>
+                <tr>
+                <th class="text-white"><strong>Birth year:</strong></th>
+                <td class="text-white">${data.birth_year}</td>
+                </tr>
+                <tr>
+                <th class="text-white"><strong>Gender:</strong></th>
+                <td class="text-white">${data.gender}</td>
+                </tr>
+                <tr>
+                <th class="text-white"><strong>Homeworld:</strong></th>
+                <td class="text-white"><p id="homeworldInfo"></p></td>
+                </tr>
+                <tr>
+                <th class="text-white"><strong>Movies:</strong></th>
+                <td class="text-white"><p id="filmsList"></p></td>
+                </tr>
+                <tr>
+                <th class="text-white"><strong>Species:</strong></th>
+                <td class="text-white"><p id="speciesList"></p></td>
+                </tr>
+                <tr>
+                <th class="text-white"><strong>Starships:</strong></th>
+                <td class="text-white"><p id="starshipsList"></p></td>
+                </tr>
+                <tr>
+                <th class="text-white"><strong>Created:</strong></th>
+                <td class="text-white">${data.created}</td>
+                </tr>
+                <tr>
+                <th class="text-white"><strong>Last edited:</strong></th>
+                <td class="text-white">${data.edited}</td>
+                </tr>
+                <tr>
+                <th class="text-white"><strong>URL:</strong></th>
+                <td class="text-white">${data.url}</td>
+                </tr>
+                </table>
             `;
-
             document.getElementById('resultado').innerHTML = template;
 
             fetchAndDisplayInfo(data.homeworld, 'homeworldInfo');
@@ -52,6 +99,3 @@ const handleSubmit = (e) => {
 };
 
 document.getElementById('apiForm').addEventListener('submit', handleSubmit);
-
-
-
