@@ -1,37 +1,32 @@
 function fetchSuperHero(){
     let xhr = new XMLHttpRequest();
     let heroID = document.getElementById("heroId").value;
-    console.log(heroID)
-    let apiKey = "f62ff62198a3bc82bbd53c14bf386cfb"
+    let apiKey = "f62ff62198a3bc82bbd53c14bf386cfb";
     let url = `https://www.superheroapi.com/api.php/${apiKey}/${heroID}`;
-    xhr.open("GET",url,true);
+    xhr.open("GET", url, true);
     xhr.onreadystatechange = function(){
         if(this.readyState === 4 && this.status === 200){
             let response = JSON.parse(this.responseText);
             console.log(response);
             displayHero(response);
-            displayAllHeroes(response); // Esta línea debe estar dentro del bloque condicional
-        } 
-        else if(this.readyState == 4){
-            console.log("Error:",this.statusText);
+            displayAllHeroes(response); // Pasar el objeto response como argumento
+        } else if(this.readyState == 4){
+            console.log("Error:", this.statusText);
         }
     };
-    
     xhr.send();
 }
+
 function displayHero(data){
     let heroInfo = document.getElementById("superHeroInfo");
     if (data.response === "error"){
-        heroInfo.innerHTML = `<p>Error: ${data.error}</p>`
-    } else{
-        heroInfo.innerHTML = `
-        <p>Name: ${data.name}</p>
-        `
+        heroInfo.innerHTML = `<p>Error: ${data.error}</p>`;
+    } else {
+        heroInfo.innerHTML = `<p>Name: ${data.name}</p>`;
     }
 }
 
-
-function displayAllHeroes(data) {
+function displayAllHeroes(data) { // Agregar 'data' como parámetro
     let heroInfo = document.getElementById("superHeroInfo");
     if (data.response === "error") {
         heroInfo.innerHTML = `<p>Error: ${data.error}</p>`;
@@ -41,6 +36,8 @@ function displayAllHeroes(data) {
         heroInfo.innerHTML = names.join("");
     }
 }
+displayAllHeroes()
+
 
 function powerHero() {
     let heroID = document.getElementById("heroId").value;
