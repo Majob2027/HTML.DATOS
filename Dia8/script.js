@@ -71,6 +71,10 @@ const handleSubmit = (e) => {
                 <td class="text-white"><p id="speciesList"></p></td>
                 </tr>
                 <tr>
+                <th class="text-white"><strong>Vehicles:</strong></th>
+                <td class="text-white"><p id="vehicleslist"></p></td>
+                </tr>
+                <tr>
                 <th class="text-white"><strong>Starships:</strong></th>
                 <td class="text-white"><p id="starshipsList"></p></td>
                 </tr>
@@ -94,6 +98,9 @@ const handleSubmit = (e) => {
             data.films.forEach(film => fetchAndDisplayInfo(film, 'filmsList'));
             data.species.forEach(species => fetchAndDisplayInfo(species, 'speciesList'));
             data.starships.forEach(starship => fetchAndDisplayInfo(starship, 'starshipsList'));
+            data.vehicles.forEach(vehicles => fetchAndDisplayInfo(vehicles, 'vehicleslist'));
+
+
         })
         .catch(displayError); 
 };
