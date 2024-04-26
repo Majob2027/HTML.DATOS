@@ -9,44 +9,46 @@ body {
 .img1{
     position: absolute;
     left: 39vi;
-    top: 3vi;
+    top: 5vi;
 }
 
 
   
 .gif {
     position: absolute;
-    bottom: 55%;
-    left: 50%;
-    transform: translate(-63%, 20%);
-    height: 18%;
+    top: 16vi;
+    left: 46.5vi;
+    height: 6vi;
   }
   
-.pokemon__data {
+  .data {
     position: absolute;
     font-weight: 600;
     color: #aaa;
-    top: 28vi;
-    right: 27%;
+    top: 23vi;
     font-size: 1.8vi;
-    left: 51vi;
-  }
-  
-.pokemon__name {
+    right: 54vi; /* Alinea el texto a la derecha */
+    text-align: right; /* Alinea el texto a la derecha dentro del contenedor */
+    width: 50%; /* Limita el ancho del contenedor para que el texto no se expanda más allá del 50% del contenedor */
+}
+
+.name {
+    position: absolute;
+    font-weight: 600;
     color: #000000;
-    text-transform: capitalize;
-  }
+    top: 23vi;
+    font-size: 1.8vi;
+    right: 45vi; /* Alinea el texto a la derecha */
+    text-align: right; /* Alinea el texto a la derecha dentro del contenedor */
+    width: 50%; /* Limita el ancho del contenedor para que el texto no se expanda más allá del 50% del contenedor */
+}
+
   
-.form {
-    position: absolute;
-    width: 65%;
-    top: 65%;
-    left: 13.5%;
-  }
+
   
-.input1 {
+.input {
     position: absolute;
-    width: 18vi;
+    width: 13.5vi;
     padding: 0.7vi;
     outline: none;
     border: 2px solid #333;
@@ -55,7 +57,8 @@ body {
     color: #3a444d;
     font-size: clamp(8px, 5vw, 1rem);
     box-shadow: -3px 4px 0 #888, -5px 7px 0 #333;
-    left: 28.5vi;
+    left: 41.5vi;
+    top: 28vi;
     
   }
   
@@ -63,7 +66,7 @@ body {
   
 .button1 {
     position: absolute;
-    width: 7vi;
+    width: 6vi;
     padding: 0.5vi;
     border: 2px solid #000;
     border-radius: 5px;
@@ -72,12 +75,15 @@ body {
     color: white;
     background-color: #444;
     box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
-    top: 37vi;
-    left: 42.5vi;
+    top: 33.5vi;
+    left: 42vi;
+  }
+  .button1:active {
+    transform: translateY(4px); /* efecto de bajada cuando está activo */
   }
 .button2 {
     position: absolute;
-    width: 7vi;
+    width: 6vi;
     padding: 0.5vi;
     border: 2px solid #000;
     border-radius: 5px;
@@ -86,6 +92,28 @@ body {
     color: white;
     background-color: #444;
     box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
-    top: 37vi;
-    left: 52.5vi;
+    top: 33.5vi;
+    left: 51vi;
+  }
+  .button2:active {
+    transform: translateY(4px); 
+  }
+
+
+  
+  .clear-input-btn {
+    position: absolute;
+    top: 28.7vi;
+    left: 55vi;
+    right: 5px;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+    font-size: 17px;
+    color: #999;
+    width: 0vi;
+  }
+  
+  .clear-input-btn:hover {
+    color: #666;
   }
