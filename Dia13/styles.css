@@ -1,3 +1,8 @@
+@font-face {
+  font-family: casino;
+  src: url(./fonts/CasinoShadow-Italic.ttf);
+}
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -25,3 +30,138 @@ body {
     margin-top: 20px;
   }
   
+
+  .boton1{
+    position: absolute;
+    top: 23vi;
+    left: 46.3vi;
+    background-color: #000000;
+    border-radius: 4px;  
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 2vi;
+    
+  }
+  .boton1:hover{
+    background-image: linear-gradient(to right, red, rgb(0, 0, 0), rgb(241, 239, 97), rgb(0, 0, 0), rgb(255, 0, 0), rgb(0, 0, 0), red);
+    animation:slidebg 2s linear infinite;
+  }
+  
+  .boton2{
+    position: absolute;
+    top: 18vi;
+    left: 46.5vi;
+    background-color: #000000;
+    border-radius: 4px;  
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 2vi;
+  }
+  .boton2:hover{
+    background-image: linear-gradient(to right, red, rgb(0, 0, 0), rgb(241, 239, 97), rgb(0, 0, 0), rgb(255, 0, 0), rgb(0, 0, 0), red);
+    animation:slidebg 2s linear infinite;
+  }
+  .boton3{
+    position: absolute;
+    top: 28vi;
+    left: 46.1vi;
+    background-color: #000000;
+    border-radius: 4px;  
+    color: #fff;
+    cursor: pointer;
+    padding: 10px 2vi;
+  }
+  .boton3:hover{
+    background-image: linear-gradient(to right, red, rgb(0, 0, 0), rgb(241, 239, 97), rgb(0, 0, 0), rgb(255, 0, 0), rgb(0, 0, 0), red);
+    animation:slidebg 2s linear infinite;
+  }
+  @keyframes slidebg {
+    to {
+      background-position:20vw;
+    }
+  }
+
+  .player{
+    position: absolute;
+    top: 17vi;
+    left: 21vi;
+    font-family: casino;
+    font-size: 1vi;
+
+  }
+  .machine{
+    position: absolute;
+    top: 17vi;
+    left: 64vi;
+    font-family: casino;
+    font-size: 1vi;
+
+  }
+  .resultado{
+    position: absolute;
+    top: 33vi;
+    right: 40.5vi;
+    font-family: casino;
+    font-size: 2vi;
+    color: yellow;
+
+  }
+
+  .gif1{
+    position: absolute;
+    width: 11vi;
+    height: 8vi;
+    left: 7vi;
+    top: 4vi;
+  }
+  .gif2{
+    width:17vi ;
+    height:13vi;
+    position: absolute;
+    left: 80vi;
+    top: 1vi;
+  }
+
+  .img1{
+    position: absolute;
+    width: 13vi;
+    left: 8vi;
+    top: 20vi;
+  }
+  .img2{
+    position: absolute;
+    width: 20vi;
+    left: 50vi;
+    top: 29.5vi;
+  }
+  .img3{
+    position: absolute;
+    width: 30vi;
+    left: 69vi;
+    top: 32.8vi;
+  }
+  .img4{
+    position: absolute;
+    width: 20vi;
+    left: 0.1vi;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; /* Cambia el color de fondo a transparente para evitar bloquear la interacción */
+    z-index: 9999;
+    display: none; /* Ocultar el overlay inicialmente */
+}
+
+.overlay.show {
+    display: flex; /* Mostrar el overlay cuando tenga la clase "show" */
+    background-color: rgba(0, 0, 0, 0.5); /* Agregar un fondo semitransparente cuando se muestra el overlay */
+    transition: background-color 0.5s ease; /* Agregar una transición suave */
+}
+
+
+
+
