@@ -1,7 +1,7 @@
 /* Estilos para el contenedor de cartas */
 .card-container {
     display: flex;
-    margin-top: 10vi;
+    margin-top: 14vi;
     margin-left: 27vi;
 }
 
@@ -22,8 +22,13 @@
     background-color: black;
     color: white;
     left: 45vi;
-    top: 30vi;
+    top: 34vi;
 }
 .card.flipped {
     transform: rotateY(180deg);
+}
+
+.pregunta{
+    left: 10vi;
+    top: 2vi;
 }
