@@ -27,8 +27,3 @@
 .card.flipped {
     transform: rotateY(180deg);
 }
-
-.pregunta{
-    left: 10vi;
-    top: 2vi;
-}
