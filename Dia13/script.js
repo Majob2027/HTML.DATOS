@@ -1,17 +1,3 @@
-const BASE_URL = 'https://deckofcardsapi.com/api/deck';
-
-let deckId;
-let playerHand = [];
-let dealerHand = [];
-let playerScore = 0;
-let dealerScore = 0;
-
-const dealBtn = document.getElementById('dealBtn');
-const hitBtn = document.getElementById('hitBtn');
-const standBtn = document.getElementById('standBtn');
-const playerHandDiv = document.getElementById('playerHand');
-const dealerHandDiv = document.getElementById('dealerHand');
-const resultDiv = document.getElementById('result');
 
 // Función para mostrar la animación de bienvenida
 function showWelcomeAnimation() {
@@ -39,55 +25,36 @@ function showWelcomeAnimation() {
 
 
 
+
+const BASE_URL = 'https://deckofcardsapi.com/api/deck';
+//Aqui se declaran las variables para guardar el id de casa cosa que vamos a usar
+let deckId;
+let playerHand = [];
+let dealerHand = [];
+let playerScore = 0;
+let dealerScore = 0;
+
+const dealBtn = document.getElementById('dealBtn');
+const hitBtn = document.getElementById('hitBtn');
+const standBtn = document.getElementById('standBtn');
+const playerHandDiv = document.getElementById('playerHand');
+const dealerHandDiv = document.getElementById('dealerHand');
+const resultDiv = document.getElementById('result');
+
+
+
 // Llamar a la función para mostrar la animación de bienvenida
 showWelcomeAnimation();
 
 dealBtn.addEventListener('click', deal);
 hitBtn.addEventListener('click', hit);
 standBtn.addEventListener('click', stand);
+// async lo usamos para funciones asincronicas y fetch para solicitudes asincronicas
+//la programación asíncrona permite que las operaciones que pueden tardar en completarse 
+//se manejen de manera eficiente, lo que evita que el programa se bloquee mientras espera que estas operaciones se completen.
 
-async function deal() {
-  playerHand = [];
-  dealerHand = [];
-  playerScore = 0;
-  dealerScore = 0;
-  resultDiv.textContent = '';
-  const response = await fetch(`${BASE_URL}/new/shuffle/?deck_count=1`);
-  const data = await response.json();
-  deckId = data.deck_id;
-  await drawCard(2, playerHand);
-  await drawCard(2, dealerHand);
-  renderHands();
-  
-  // Habilitar los botones de Hit y Stand
-  hitBtn.disabled = false;
-  standBtn.disabled = false;
-}
 
-async function hit() {
-  await drawCard(1, playerHand);
-  renderHands();
-  if (calculateScore(playerHand) > 21) {
-    endGame('Tu maso se paso de 21');
-  }
-}
-
-async function stand() {
-  while (calculateScore(dealerHand) < 17) {
-    await drawCard(1, dealerHand);
-  }
-  renderHands();
-  const playerFinalScore = calculateScore(playerHand);
-  const dealerFinalScore = calculateScore(dealerHand);
-  if (dealerFinalScore > 21 || playerFinalScore > dealerFinalScore) {
-    endGame('Ganaste!');
-  } else if (playerFinalScore < dealerFinalScore) {
-    endGame('Gano la maquina');
-  } else {
-    endGame('It\'s a tie!');
-  }
-}
-
+//4 funciones que le dan la funcionalidad al juego
 async function drawCard(numCards, hand) {
   const response = await fetch(`${BASE_URL}/${deckId}/draw/?count=${numCards}`);
   const data = await response.json();
@@ -135,6 +102,59 @@ function endGame(message) {
   standBtn.disabled = true;
   dealBtn.disabled = false;
 }
+
+
+
+
+
+
+
+
+
+
+async function deal() {
+  playerHand = [];
+  dealerHand = [];
+  playerScore = 0;
+  dealerScore = 0;
+  resultDiv.textContent = '';
+  const response = await fetch(`${BASE_URL}/new/shuffle/?deck_count=1`);
+  const data = await response.json();
+  deckId = data.deck_id;
+  await drawCard(2, playerHand);
+  await drawCard(2, dealerHand);
+  renderHands();
+  
+  // Habilitar los botones de Hit y Stand
+  hitBtn.disabled = false;
+  standBtn.disabled = false;
+}
+
+
+async function hit() {
+  await drawCard(1, playerHand);
+  renderHands();
+  if (calculateScore(playerHand) > 21) {
+    endGame('Tu maso se paso de 21');
+  }
+}
+
+async function stand() {
+  while (calculateScore(dealerHand) < 17) {
+    await drawCard(1, dealerHand);
+  }
+  renderHands();
+  const playerFinalScore = calculateScore(playerHand);
+  const dealerFinalScore = calculateScore(dealerHand);
+  if (dealerFinalScore > 21 || playerFinalScore > dealerFinalScore) {
+    endGame('Ganaste!');
+  } else if (playerFinalScore < dealerFinalScore) {
+    endGame('Gano la maquina');
+  } else {
+    endGame('It\'s a tie!');
+  }
+}
+
 
 deal();
 
