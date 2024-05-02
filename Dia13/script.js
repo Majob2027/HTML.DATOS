@@ -8,8 +8,8 @@ function showWelcomeAnimation() {
   img.src = './gifs/BIENVENIDO-AL-CASINO-DE-MAJO-30-4-2024-removebg-preview.png';
   
   // Establecer el tamaño de la imagen
-  img.style.width = '700px'; // Cambia '300px' al tamaño que desees
-  img.style.height = '400px'; // Mantener la relación de aspecto
+  img.style.width = '700px'; 
+  img.style.height = '400px'; 
   
   overlay.appendChild(img);
   document.body.appendChild(overlay);
@@ -58,6 +58,8 @@ standBtn.addEventListener('click', stand);
 async function drawCard(numCards, hand) {
   const response = await fetch(`${BASE_URL}/${deckId}/draw/?count=${numCards}`);
   const data = await response.json();
+  // Itera sobre todas las cartas extraídas (data.cards) y las agrega a la mano especificada (hand) una por una utilizando 
+  //el método push(). En resumen, esta parte del código toma cada carta extraída y la añade a la mano indicada.
   data.cards.forEach(card => {
     hand.push(card);
   });
@@ -96,11 +98,13 @@ function renderHands() {
   }
 }
 
+
 function endGame(message) {
   resultDiv.textContent = message;
   hitBtn.disabled = true;
   standBtn.disabled = true;
   dealBtn.disabled = false;
+  document.getElementById('hola').style.display = 'none';
 }
 
 
@@ -150,7 +154,7 @@ async function stand() {
     endGame('Ganaste!');
   } else if (playerFinalScore < dealerFinalScore) {
     endGame('Gano la maquina');
-  } else {
+  } else if (playerFinalScore==dealerFinalScore){
     endGame('It\'s a tie!');
   }
 }
