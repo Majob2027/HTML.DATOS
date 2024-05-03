@@ -1,17 +1,63 @@
 .boton1{
     background-color: blue;
     color: white;
+    border-radius: 0.2vi;
+    position: absolute;
+    top: 17vi;
+    width: 6vi;
 
 }
 .boton2{
     background-color: black;
     color: white;
+    border-radius: 0.2vi;
+    position: absolute;
+    top: 17vi;
+    width: 7vi;
+    left: 8vi;
 
 
 
 
 }
-.boton2{
+.boton3{
  background-color: red;
  color: white;
+ border-radius: 0.2vi;
+ position: absolute;
+ top: 17vi;
+ width: 6vi;
+ left: 17vi;
+}
+.titulo1{
+    font-size: 1vi;
+    position: absolute;
+    left: 2vi;
+    top: 0.8vi;
+    
+}
+.titulo2{
+    font-size: 1vi;
+    position: absolute;
+    top: 7.5vi;
+    left: 25vi;
+}
+
+.cuadrado1{
+    position: absolute;
+    top: 3vi;
+    left: 24vi;
+    width: 47.5vi;
+    height: 28vi;
+    border:1px solid black;
+    background-color:;
+}
+.cuadrado2{
+    position: absolute;
+    top: 3vi;
+    left: 24vi;
+    width: 47.5vi;
+    height: 3vi;
+    border:1px solid black;
+    background-color: rgb(243, 243, 243);
 }

@@ -5,8 +5,6 @@ let users = [];
 
 
 
-
-
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
@@ -36,6 +34,12 @@ form.addEventListener('submit', function(e) {
     posterInput.value = '';
     ubicacion2Input.value = '';
 });
+
+
+function mostrarheroes(users){
+    console.log.userList
+
+}
 
 function renderUser(user) {
     const li = document.createElement('li');
