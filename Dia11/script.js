@@ -13,8 +13,8 @@ function getPokemonInfo(pokemonNameOrId) {
             const pokemonid = data.id;
             const pokemonName = data.name;
             const pokemonAnimatedSpriteUrl = data.sprites.versions['generation-v']['black-white'].animated.front_default;
-
-            document.getElementById('pokemonid').textContent = `${pokemonid}-`
+`
+            document.getElementById('pokemonid').textContent = ${pokemonid}-`
             document.getElementById('pokemonName').textContent = `${pokemonName}`;
             document.getElementById('pokemonImage').src = pokemonAnimatedSpriteUrl;
         })
