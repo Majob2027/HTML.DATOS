@@ -20,11 +20,18 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
-
     btnEliminar.addEventListener('click', () => {
         eliminarFila(filaEditando);
-        limpiarFormulario();
     });
+
+    function eliminarFila(fila) {
+        if (fila && filaEditando) {
+            fila.remove();
+            filaEditando = null;
+        }
+    }
+    
+    
     
 
     cuerpoTabla.addEventListener('click', (event) => {
