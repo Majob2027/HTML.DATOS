@@ -20,17 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
-    btnEliminar.addEventListener('click', () => {
-        eliminarFila(filaEditando);
-    });
-
-    function eliminarFila(fila) {
-        if (fila && filaEditando) {
-            fila.remove();
-            filaEditando = null;
-        }
-    }
-    
+ 
     
     
 
@@ -65,30 +55,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 <button type="button" class="btn btn-sm btn-danger btn-delete">Eliminar</button>
             </td>
         `;
-    }
-
-    function actualizarFila() {
-        const datosFormulario = obtenerDatosFormulario();
-        filaEditando.cells[0].textContent = datosFormulario.nombrePersonaje;
-        filaEditando.cells[1].textContent = datosFormulario.nombreActor;
-        filaEditando.cells[2].textContent = datosFormulario.edadActor;
-        filaEditando.cells[3].textContent = datosFormulario.ubicacion;
-        filaEditando.cells[4].textContent = datosFormulario.poster;
-        filaEditando.cells[5].textContent = datosFormulario.fechaAparicion;
-        filaEditando.cells[6].textContent = datosFormulario.productora;
-        filaEditando = null;
-    }
-
-    function editarFila(fila) {
-        const celdas = fila.cells;
-        formulario.nombrePersonaje.value = celdas[0].textContent;
-        formulario.nombreActor.value = celdas[1].textContent;
-        formulario.edadActor.value = celdas[2].textContent;
-        formulario.ubicacion.value = celdas[3].textContent;
-        formulario.poster.value = celdas[4].textContent;
-        formulario.fechaAparicion.value = celdas[5].textContent;
-        formulario.productora.value = celdas[6].textContent;
-        filaEditando = fila;
     }
 
     function eliminarFila(fila) {
