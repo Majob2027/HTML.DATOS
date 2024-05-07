@@ -35,3 +35,15 @@
     left: 28vi;
 
 }
+.img{
+    position: absolute;
+    top: 10vi;
+    left: 41.5vi;
+    width: 10vi;
+    height: 10vi;
+    border-radius:150px;
+    border:0.02vi solid #666;
+}
+.icono1{
+    width: 1vi;
+}
