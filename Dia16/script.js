@@ -20,9 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
- 
-    
-    
 
     cuerpoTabla.addEventListener('click', (event) => {
         const objetivo = event.target;
@@ -97,5 +94,3 @@ document.addEventListener('DOMContentLoaded', function () {
         return true;
     }
 });
-
-

@@ -19,9 +19,9 @@ const handleSubmit = (e) => {
 
     const id = document.getElementById('idInput').value;
 
-    const apiUrl = 'https://swapi.py4e.com/api/people';
+    const apiUrl = 'https://randomuser.me/api/';
 
-    fetch(apiUrl + '/' + id)
+    fetch(apiUrl)
         .then(response => response.json()) 
         .then(data => {
             const template = `
