@@ -114,7 +114,7 @@
     position: absolute;
     width: 15vi;
     text-align: center;
-    left: 33.5vi;
+    left: 35vi;
     top: 22vi;
     font-size: 2vi;
 }
@@ -144,9 +144,9 @@
 }
 .texto4{
     position: absolute;
-    width: 16vi;
+    width: 20vi;
     text-align: center;
-    left: 38vi;
+    left: 36vi;
     top: 22vi;
     font-size: 2vi;
 }
@@ -169,7 +169,7 @@
 #titulo6{
     position: absolute;
     top: 21vi;
-    left: 43.5vi;
+    left: 44vi;
     color: #666;
     width: 8vi;
 }
@@ -177,7 +177,7 @@
     position: absolute;
     width: 15vi;
     text-align: center;
-    left: 38.8vi;
+    left: 39.2vi;
     top: 22vi;
     font-size: 2vi;
 }
