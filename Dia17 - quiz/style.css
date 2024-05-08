@@ -37,7 +37,7 @@
 }
 .img{
     position: absolute;
-    top: 10vi;
+    top: 11vi;
     left: 41.5vi;
     width: 10vi;
     height: 10vi;
@@ -45,5 +45,38 @@
     border:0.02vi solid #666;
 }
 .icono1{
-    width: 1vi;
+    position: absolute;
+    width: 4vi;
+    left: 29.5vi;
+    top: 28vi;
+}
+.icono2{
+    position: absolute;
+    width: 5vi;
+    left: 35vi;
+    top: 28.5vi;
+}
+.icono3{
+    position: absolute;
+    width: 4vi;
+    left: 40.5vi;
+    top: 28vi;
+}
+.icono4{
+    position: absolute;
+    width: 3.5vi;
+    left: 46.5vi;
+    top: 28.5vi;
+}
+.icono5{
+    position: absolute;
+    width: 4vi;
+    left: 51.5vi;
+    top: 28.4vi;
+}
+.icono6{
+    position: absolute;
+    width: 3.8vi;
+    left: 57.5vi;
+    top: 27.8vi;
 }
