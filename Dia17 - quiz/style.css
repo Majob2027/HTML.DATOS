@@ -49,34 +49,135 @@
     width: 4vi;
     left: 29.5vi;
     top: 28vi;
+    cursor: pointer;
 }
 .icono2{
     position: absolute;
     width: 5vi;
     left: 35vi;
     top: 28.5vi;
+    cursor: pointer;
 }
 .icono3{
     position: absolute;
     width: 4vi;
     left: 40.5vi;
     top: 28vi;
+    cursor: pointer;
 }
 .icono4{
     position: absolute;
     width: 3.5vi;
     left: 46.5vi;
     top: 28.5vi;
+    cursor: pointer;
 }
 .icono5{
     position: absolute;
     width: 4vi;
     left: 51.5vi;
     top: 28.4vi;
+    cursor: pointer;
 }
 .icono6{
     position: absolute;
     width: 3.8vi;
     left: 57.5vi;
     top: 27.8vi;
+    cursor: pointer;
+}
+
+
+#titulo1{
+    position: absolute;
+    top: 21vi;
+    left: 43.7vi;
+    color: #666;
+    width: 6vi;
+}
+.texto1{
+    position: absolute;
+    width: 18vi;
+    text-align: center;
+    left: 38vi;
+    top: 22vi;
+    font-size: 2vi;
+}
+#titulo2{
+    position: absolute;
+    top: 21vi;
+    left: 42.9vi;
+    color: #666;
+    width: 8vi;
+}
+.texto2{
+    position: absolute;
+    width: 15vi;
+    text-align: center;
+    left: 33.5vi;
+    top: 22vi;
+    font-size: 2vi;
+}
+
+#titulo3{
+    position: absolute;
+    top: 21vi;
+    left: 43.8vi;
+    color: #666;
+    width: 6vi;
+}
+.texto3{
+    position: absolute;
+    width: 25vi;
+    text-align: center;
+    left: 34.5vi;
+    top: 22vi;
+    font-size: 2vi;
+}
+
+#titulo4{
+    position: absolute;
+    top: 21vi;
+    left: 43.8vi;
+    color: #666;
+    width: 6vi;
+}
+.texto4{
+    position: absolute;
+    width: 16vi;
+    text-align: center;
+    left: 38vi;
+    top: 22vi;
+    font-size: 2vi;
+}
+#titulo5{
+    position: absolute;
+    top: 21vi;
+    left: 42.5vi;
+    color: #666;
+    width: 8vi;
+}
+.texto5{
+    position: absolute;
+    width: 15vi;
+    text-align: center;
+    left: 38.5vi;
+    top: 22vi;
+    font-size: 2vi;
+}
+
+#titulo6{
+    position: absolute;
+    top: 21vi;
+    left: 43.5vi;
+    color: #666;
+    width: 8vi;
+}
+.texto6{
+    position: absolute;
+    width: 15vi;
+    text-align: center;
+    left: 38.8vi;
+    top: 22vi;
+    font-size: 2vi;
 }
