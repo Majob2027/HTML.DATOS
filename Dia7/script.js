@@ -17,126 +17,70 @@ function fetchSuperHero(){
     xhr.send();
 }
 
-function displayHero(data){
+function displayHero(data) {
     let heroInfo = document.getElementById("superHeroInfo");
-    if (data.response === "error"){
-        heroInfo.innerHTML = `<p>Error: ${data.error}</p>`;
-    } else {
-        heroInfo.innerHTML = `<p>Name: ${data.name}</p>`;
-    }
-}
-
-function displayAllHeroes(data) { // Agregar 'data' como parámetro
-    let heroInfo = document.getElementById("superHeroInfo");
+    let heroTableBody = document.getElementById("heroTableBody");
+    
     if (data.response === "error") {
         heroInfo.innerHTML = `<p>Error: ${data.error}</p>`;
     } else {
-        let heroes = data.results;
-        let names = heroes.map(hero => `<p>Name: ${hero.name}</p>`);
-        heroInfo.innerHTML = names.join("");
+        heroTableBody.innerHTML = `
+            <tr>
+                <td>${data.name}</td>
+                <td>${formatPowerstats(data.powerstats)}</td>
+                <td>${formatBiography(data.biography)}</td>
+                <td>${formatAppearance(data.appearance)}</td>
+                <td>${formatWork(data.work)}</td>
+                <td>${formatConnections(data.connections)}</td>
+                <td><img src="${data.image.url}" alt="${data.name}" style="max-width: 100px;"></td>
+            </tr>`;
     }
 }
-displayAllHeroes()
 
-
-function powerHero() {
-    let heroID = document.getElementById("heroId").value;
-    let apikey = "487f7b22f68312d2c1bbc93b1aea445b"
-    let url =` https://superheroapi.com/api.php/${apikey}/${heroID}`;
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            let powers = data.powerstats;
-            let powersHTML = '<p>Poderes:</p><ul>';
-            for (let power in powers) {
-                powersHTML += `<li>${power}: ${powers[power]}</li>`;
-            }
-            document.getElementById('superHeroPower').innerHTML = powersHTML;
-        })
-        .catch(error => console.error('Error fetching powers:', error));
+function formatPowerstats(powerstats) {
+    let formattedString = "<ul>";
+    for (let stat in powerstats) {
+        formattedString += `<li>${stat}: ${powerstats[stat]}</li>`;
+    }
+    formattedString += "</ul>";
+    return formattedString;
 }
 
-function biografhyHero() {
-    let heroID = document.getElementById("heroId").value;
-    let apikey = "487f7b22f68312d2c1bbc93b1aea445b"
-    let url =` https://superheroapi.com/api.php/${apikey}/${heroID}`;
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            let biografhys = data.biografhy;
-            let powersHTML = '<p>Biografia:</p><ul>';
-            for (let biografhy in biografhys) {
-                powersHTML += `<li>${biografhy}: ${biografhys[biografhy]}</li>`;
-            }
-            document.getElementById('superHeroBiografhy').innerHTML = powersHTML;
-        })
-        .catch(error => console.error('Error fetching biografhy:', error));
+function formatBiography(biography) {
+    let formattedString = "<ul>";
+    for (let info in biography) {
+        formattedString += `<li>${info}: ${biography[info]}</li>`;
+    }
+    formattedString += "</ul>";
+    return formattedString;
 }
 
-function AppearanceHero() {
-    let heroID = document.getElementById("heroId").value;
-    let apikey = "487f7b22f68312d2c1bbc93b1aea445b"
-    let url =` https://superheroapi.com/api.php/${apikey}/${heroID}`;
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            let Appearances = data.Appearance;
-            let powersHTML = '<p>Appearance:</p><ul>';
-            for (let Appearance in Appearances) {
-                powersHTML += `<li>${Appearance}: ${Appearances[Appearance]}</li>`;
-            }
-            document.getElementById('superHeroAppearance').innerHTML = powersHTML;
-        })
-        .catch(error => console.error('Error fetching Appearance:', error));
+function formatAppearance(appearance) {
+    let formattedString = "<ul>";
+    for (let detail in appearance) {
+        formattedString += `<li>${detail}: ${appearance[detail]}</li>`;
+    }
+    formattedString += "</ul>";
+    return formattedString;
 }
 
-function WorkHero() {
-    let heroID = document.getElementById("heroId").value;
-    let apikey = "487f7b22f68312d2c1bbc93b1aea445b"
-    let url =` https://superheroapi.com/api.php/${apikey}/${heroID}`;
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            let Work = data.Work;
-            let powersHTML = '<p> Work:</p><ul>';
-            for (let Works in Work) {
-                powersHTML += `<li>${Works}: ${Work[Works]}</li>`;
-            }
-            document.getElementById('superHeroWork').innerHTML = powersHTML;
-        })
-        .catch(error => console.error('Error fetching Connections:', error));
+function formatWork(work) {
+    let formattedString = "<ul>";
+    for (let detail in work) {
+        formattedString += `<li>${detail}: ${work[detail]}</li>`;
+    }
+    formattedString += "</ul>";
+    return formattedString;
 }
 
-function connectionsHero() {
-    let heroID = document.getElementById("heroId").value;
-    let apikey = "487f7b22f68312d2c1bbc93b1aea445b"
-    let url =` https://superheroapi.com/api.php/${apikey}/${heroID}`;
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            let Connections = data.Connections;
-            let powersHTML = '<p> Work:</p><ul>';
-            for (let Works in Connections) {
-                powersHTML += `<li>${Works}: ${Connections[Works]}</li>`;
-            }
-            document.getElementById('superHero').innerHTML = powersHTML;
-        })
-        .catch(error => console.error('Error fetching Connections:', error));
+function formatConnections(connections) {
+    let formattedString = "<ul>";
+    for (let detail in connections) {
+        formattedString += `<li>${detail}: ${connections[detail]}</li>`;
+    }
+    formattedString += "</ul>";
+    return formattedString;
 }
 
-function ImageHero() {
-    let heroID = document.getElementById("heroId").value;
-    let apikey = "487f7b22f68312d2c1bbc93b1aea445b"
-    let url =` https://superheroapi.com/api.php/${apikey}/${heroID}`;
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            let Connections = data.Connections;
-            let powersHTML = '<p> Work:</p><ul>';
-            for (let Works in Connections) {
-                powersHTML += `<li>${Works}: ${Connections[Works]}</li>`;
-            }
-            document.getElementById('superHero').innerHTML = imageHTML;
-        })
-        .catch(error => console.error('Error fetching Connections:', error));
-}
+
+

@@ -1,3 +1,10 @@
+.boton{
+    background-color: rgb(55, 55, 89);
+    color: white;
+    position: absolute;
+    top: 35vi;
+    left: 43vi;
+}
 
 
 .titulo{
@@ -34,8 +41,8 @@
     align-items: center;
     border-color: white;
     font-family: cursive;
-    margin-left: 18vi;
-    margin-top: 2vi;
+    margin-left: 25vi;
+    margin-top: 4vi;
 
 }
 .cuadro1 {
