@@ -3,35 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>21 Game</title>
-<link rel="stylesheet" href="./styles.css">
+<title>CRUD App</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="./style.css">
 </head>
-<style>
-    body {
-        background-image: url('/Dia12/imagenes/pngtree-red-and-casino-card-illustration-background-design-picture-image_1491728.jpg');
-        background-size: cover;
-        background-position: center;
-        color: black;
-        background-attachment: fixed;
-    }
-</style>
+
 <body>
-  <!-- <div class="overlay" id="overlay"></div> -->
-<div id="game">
-  <button id="dealBtn" class="boton1">Deal</button>
-  <button id="hitBtn" class="boton2">Hit</button>
-  <button id="standBtn" class="boton3">Stand</button>
-  <div id="playerHand" class="player"></div>
-  <div id="dealerHand" class="machine"></div>
-  <div id="result" class="resultado"></div>
-  <img id="hola" src="https://www.deckofcardsapi.com/static/img/back.png">
-  <img src="https://media.giphy.com/media/3orieTfbEDKWoC7rwI/giphy.gif" alt="GIF" class="gif1">
-  <iframe src="https://giphy.com/embed/3orifaEWA1meCjCnwA"  frameBorder="0" class="gif2" allowFullScreen></iframe>
-  <img src="./gifs/image-removebg-preview (27).png" class="img1" alt="imagen del hijo de homero">
-  <img src="./gifs/image-removebg-preview (28).png" class="img2" alt="homero">
-  <img src="./gifs/image-removebg-preview (29).png" class="img3" alt="Jugador">
-  <img src="./gifs/image-removebg-preview (30) (1).png" class="img4" alt="tv">
-</div>
+
+<h1 class="titulo2">Gestion de Heroes</h1>
+
+<div class="container" id="contenedor" style="position:absolute; left: 25vi;top: 10vi;">
+    <form class="row g-3 needs-validation" novalidate>
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label" id="name">Nombre personaje</label>
+          <input type="text" class="form-control" id="validationCustom01" style="background-color: rgb(235, 235, 235);">
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="validationCustom02" class="form-label" id="nameactor">Nombre de actor</label>
+          <input type="text" class="form-control" id="validationCustom02" style="background-color: rgb(235, 235, 235);">
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+       
+        <div class="col-md-6" id="">
+          <label for="validationCustom03" class="form-label" id="edad">Edad actor </label>
+          <input type="text" class="form-control" id="validationCustom03" style="width: 22vi; background-color: rgb(235, 235, 235);" required>
+          <div class="invalid-feedback">
+            Please provide a valid city.
+          </div>
+        </div>
+        
+        <div class="col-md-3" style="">
+          <label for="validationCustom05" class="form-label" style="position: absolute; left: 24vi;" id="Ubicacion" >Ubicacion</label>
+          <input type="text" class="form-control" id="validationCustom05" style="width: 22vi; position: absolute; left: 23.5vi; top: 6.2vi; background-color: rgb(235, 235, 235);" required>
+          <div class="invalid-feedback">
+            Please provide a valid zip.
+          </div>
+        </div>
+        <div class="col-md-4">
+            <label for="validationCustom01" class="form-label" id="Poster">Poster</label>
+            <input type="text" class="form-control" id="validationCustom01"  style="background-color: rgb(235, 235, 235);">
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+          </div>
+          <div class="col">
+            <div class="mb-3">
+                <label for="dateAppears" class="form-label" id="Ubicacion2">Ubicacion</label>
+                <input type="date" class="form-control" name="dateAppears" id="dateAppears" style="width: 22vi; background-color: rgb(235, 235, 235);">
+            </div>
+        </div>
+        <select class="form-select" aria-label="Default select example" id="empresa" style="width: 45vi; background-color: rgb(235, 235, 235);">
+            <option selected></option>
+            <option value="1">Marvel</option>
+            <option value="2">Dc comics</option>
+          </select><br>
+        
+          
+        </div>
+
+        <div class="cuadrado1"> </div>
+        <div class="cuadrado2"> 
+          <h1 class="titulo1">Mis heroes</h1>
+        </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
 <script src="./script.js"></script>
 </body>
 </html>
