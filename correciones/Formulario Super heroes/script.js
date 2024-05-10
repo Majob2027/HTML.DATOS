@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-function toggleInput() {
+function trajeinput1() {
     const trajeInput = document.getElementById('traje');
     trajeInput.style.display = trajeInput.style.display === 'none' ? 'inline' : 'none';
 }
