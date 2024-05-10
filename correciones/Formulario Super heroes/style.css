@@ -1,0 +1,9 @@
+.btn-edit {
+    background-color: #007bff; /* Azul */
+    color: #fff; /* Texto blanco */
+}
+
+.btn-delete {
+    background-color: #dc3545; /* Rojo */
+    color: #fff; /* Texto blanco */
+}
