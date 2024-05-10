@@ -1,159 +1,96 @@
-let heroes = [];
+document.addEventListener('DOMContentLoaded', function () {
+    const formulario = document.getElementById('frmDataHero');
+    const cuerpoTabla = document.querySelector('#tableData tbody');
+    const btnGuardar = document.getElementById('btnSave');
+    const btnAgregar = document.getElementById('btnAdd');
+    const btnEliminar = document.getElementById('btnDelete');
 
-function AddData(event) {
-    event.preventDefault();
+    let filaEditando = null;
 
-    let characterName = document.getElementById('inputname').value;
-    let actorName = document.getElementById('inputname2').value;
-    let age = document.getElementById('inputEdad').value;
-    let cityName = document.getElementById('inputubicacion').value;
-    let poster = document.getElementById('inputposter').value;
-    let dateAppears = document.getElementById('inputfecha').value;
-    let producer = document.getElementById('inputproductora').value;
+    btnAgregar.addEventListener('click', () => {
+        limpiarFormulario();
+    });
 
-    let hero = {
-        characterName: characterName,
-        actorName: actorName,
-        age: age,
-        cityName: cityName,
-        poster: poster,
-        dateAppears: dateAppears,
-        producer: producer
-    };
+    btnGuardar.addEventListener('click', () => {
+        if (validarFormulario()) {
+            if (filaEditando) {
+                actualizarFila();
+            } else {
+                agregarFila();
+            }
+        }
+    });
 
-    heroes.push(hero);
+    cuerpoTabla.addEventListener('click', (event) => {
+        const objetivo = event.target;
+        if (objetivo.tagName === 'BUTTON' && objetivo.classList.contains('btn-edit')) {
+            editarFila(objetivo.closest('tr'));
+        }
+        if (objetivo.tagName === 'BUTTON' && objetivo.classList.contains('btn-delete')) {
+            eliminarFila(objetivo.closest('tr'));
+        }
+    });
 
-    UpdateTable();
-}
+    formulario.addEventListener('submit', (event) => {
+        event.preventDefault();
+        btnGuardar.click();
+    });
 
-function UpdateTable() {
-    let tableBody = document.getElementById('tableData').getElementsByTagName('tbody')[0];
-    tableBody.innerHTML = '';
-
-    heroes.forEach((hero, index) => {
-        let row = tableBody.insertRow();
-        row.innerHTML = `
-            <td>${hero.characterName}</td>
-            <td>${hero.actorName}</td>
-            <td>${hero.age}</td>
-            <td>${hero.cityName}</td>
-            <td>${hero.poster}</td>
-            <td>${hero.dateAppears}</td>
-            <td>${hero.producer}</td>
+    function agregarFila() {
+        const datosFormulario = obtenerDatosFormulario();
+        const nuevaFila = cuerpoTabla.insertRow();
+        nuevaFila.innerHTML = `
+            <td>${datosFormulario.nombrePersonaje}</td>
+            <td>${datosFormulario.nombreActor}</td>
+            <td>${datosFormulario.edadActor}</td>
+            <td>${datosFormulario.ubicacion}</td>
+            <td>${datosFormulario.poster}</td>
+            <td>${datosFormulario.fechaAparicion}</td>
+            <td>${datosFormulario.productora}</td>
             <td>
-                <button type="button" class="btn btn-info btn-sm" onclick="EditHero(${index})">Editar</button>
+                <button type="button" class="btn btn-sm btn-primary btn-edit">Editar</button>
+                <button type="button" class="btn btn-sm btn-danger btn-delete">Eliminar</button>
             </td>
         `;
-    });
-}
+    }
 
-function EditHero(index) {
-    let hero = heroes[index];
+    function eliminarFila(fila) {
+        if (fila) {
+            fila.remove();
+            limpiarFormulario();
+        }
+        filaEditando = null;
+    }
 
-    document.getElementById('inputname').value = hero.characterName;
-    document.getElementById('inputname2').value = hero.actorName;
-    document.getElementById('inputEdad').value = hero.age;
-    document.getElementById('inputubicacion').value = hero.cityName;
-    document.getElementById('inputposter').value = hero.poster;
-    document.getElementById('inputfecha').value = hero.dateAppears;
-    document.getElementById('inputproductora').value = hero.producer;
+    function limpiarFormulario() {
+        formulario.reset();
+        filaEditando = null;
+    }
 
-    heroes.splice(index, 1);
+    function obtenerDatosFormulario() {
+        return {
+            nombrePersonaje: formulario.characterName.value.trim(),
+            nombreActor: formulario.actorName.value.trim(),
+            edadActor: formulario.age.value.trim(),
+            ubicacion: formulario.cityName.value.trim(),
+            poster: formulario.poster.value.trim(),
+            fechaAparicion: formulario.dateAppears.value.trim(),
+            productora: formulario.producer.value.trim()
+        };
+    }
 
-    UpdateTable();
-}
-
-document.getElementById('btnAdd').addEventListener('click', AddData);
-document.getElementById('btnSave').addEventListener('click', AddData);
-window.addEventListener('load', UpdateTable);
-
-
-///-----------------------------------
-
-// Función para eliminar un héroe
-function DeleteHero(index) {
-    // Eliminar el héroe del array
-    heroes.splice(index, 1);
-
-    // Actualizar la tabla de héroes
-    UpdateTable();
-}
-
-// Función para actualizar un héroe
-function UpdateHero(index) {
-    // Obtener el héroe del array usando el índice
-    let hero = heroes[index];
-
-    // Actualizar los datos del héroe con los valores del formulario
-    hero.characterName = document.getElementById('inputname').value;
-    hero.actorName = document.getElementById('inputname2').value;
-    hero.age = document.getElementById('inputEdad').value;
-    hero.cityName = document.getElementById('inputubicacion').value;
-    hero.poster = document.getElementById('inputposter').value;
-    hero.dateAppears = document.getElementById('inputfecha').value;
-    hero.producer = document.getElementById('inputproductora').value;
-
-    // Actualizar la tabla de héroes
-    UpdateTable();
-}
-
-// Evento para eliminar un héroe cuando se hace clic en el botón "Eliminar"
-function AddDeleteEventListeners() {
-    let deleteButtons = document.querySelectorAll('.btn-delete');
-    deleteButtons.forEach((button, index) => {
-        button.addEventListener('click', () => DeleteHero(index));
-    });
-}
-
-// Evento para actualizar un héroe cuando se hace clic en el botón "Actualizar"
-function AddUpdateEventListeners() {
-    let updateButtons = document.querySelectorAll('.btn-update');
-    updateButtons.forEach((button, index) => {
-        button.addEventListener('click', () => UpdateHero(index));
-    });
-}
-
-// Función para construir la fila de la tabla con botones de editar y eliminar
-function BuildTableRow(hero, index) {
-    let row = document.createElement('tr');
-    row.innerHTML = `
-        <td>${hero.characterName}</td>
-        <td>${hero.actorName}</td>
-        <td>${hero.age}</td>
-        <td>${hero.cityName}</td>
-        <td>${hero.poster}</td>
-        <td>${hero.dateAppears}</td>
-        <td>${hero.producer}</td>
-        <td>
-            <button type="button" class="btn btn-info btn-sm btn-update">Editar</button>
-            <button type="button" class="btn btn-danger btn-sm btn-delete">Eliminar</button>
-        </td>
-    `;
-    return row;
-}
-
-// Función para actualizar la tabla de héroes
-function UpdateTable() {
-    let tableBody = document.getElementById('tableData').getElementsByTagName('tbody')[0];
-    tableBody.innerHTML = '';
-
-    heroes.forEach((hero, index) => {
-        let row = BuildTableRow(hero, index);
-        tableBody.appendChild(row);
-    });
-
-    // Agregar eventos a los botones de editar y eliminar
-    AddDeleteEventListeners();
-    AddUpdateEventListeners();
-}
-
-// Evento para agregar un nuevo héroe cuando se hace clic en el botón "Nuevo Heroe"
-document.getElementById('btnAdd').addEventListener('click', AddData);
-
-// Evento para guardar un héroe cuando se hace clic en el botón "Guardar Heroe"
-document.getElementById('btnSave').addEventListener('click', AddData);
-
-// Llamar a UpdateTable al cargar la página para mostrar cualquier héroe existente
-window.addEventListener('load', UpdateTable);
-
-
+    function validarFormulario() {
+        const datosFormulario = obtenerDatosFormulario();
+        if (datosFormulario.nombrePersonaje === '' ||
+            datosFormulario.nombreActor === '' ||
+            datosFormulario.edadActor === '' ||
+            datosFormulario.ubicacion === '' ||
+            datosFormulario.poster === '' ||
+            datosFormulario.fechaAparicion === '' ||
+            datosFormulario.productora === '') {
+            alert('Por favor, complete todos los campos.');
+            return false;
+        }
+        return true;
+    }
+});
