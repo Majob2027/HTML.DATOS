@@ -1,61 +1,66 @@
-// Función para obtener la información de un Pokémon
-function getPokemonInfo(pokemonNameOrId) {
-    const apiUrl = `https://pokeapi.co/api/v2/pokemon/${pokemonNameOrId}`;
+const form = document.getElementById('crud-form');
+const userList = document.getElementById('user-list');
 
-    fetch(apiUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Página fuera de servicio');
-            }
-            return response.json();
-        })
-        .then(data => {
-            const pokemonid = data.id;
-            const pokemonName = data.name;
-            const pokemonAnimatedSpriteUrl = data.sprites.versions['generation-v']['black-white'].animated.front_default;
-`
-            document.getElementById('pokemonid').textContent = ${pokemonid}-`
-            document.getElementById('pokemonName').textContent = `${pokemonName}`;
-            document.getElementById('pokemonImage').src = pokemonAnimatedSpriteUrl;
-        })
-        .catch(error => {
-            console.error('Ocurrió un problema con tu función: ', error);
-        });
+let users = [];
+
+
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nameInput = document.getElementById('name');
+    const nameactorInput = document.getElementById('nameactor');
+    const edadInput = document.getElementById('edad');
+    const ubicacionInput = document.getElementById('ubicacion');
+    const posterInput = document.getElementById('poster');
+    const ubicacion2Input = document.getElementById('ubicacion2');
+
+    const newUser = {
+        name: nameInput.value,
+        nameactor: nameactorInput.value,
+        edad: edadInput.value,
+        ubicacion: ubicacionInput.value,
+        poster: posterInput.value,
+        ubicacion2: ubicacion2Input.value
+    };
+
+    users.push(newUser);
+    renderUser(newUser);
+
+    nameInput.value = '';
+    nameactorInput.value = '';
+    edadInput.value = '';
+    ubicacionInput.value = '';
+    posterInput.value = '';
+    ubicacion2Input.value = '';
+});
+
+
+function mostrarheroes(users){
+    console.log.userList
+
 }
 
+function renderUser(user) {
+    const li = document.createElement('li');
+    li.innerHTML = `
+        <span>Name:</span>${user.name}<br>
+        <span>Actor Name:</span>${user.nameactor}<br>
+        <span>Edad:</span>${user.edad}<br>
+        <span>Ubicacion:</span>${user.ubicacion}<br>
+        <span>Poster:</span>${user.poster}<br>
+        <span>Ubicacion 2:</span>${user.ubicacion2}<br>
+        <button class="delete-btn">Delete</button>
+    `;
+    userList.appendChild(li);
 
-const pokemonInput = document.getElementById('pokemonInput');
-const clearBtn = document.getElementById('clearBtn');
-const prevBtn = document.querySelector('.button1');
-const nextBtn = document.querySelector('.button2');
+    const deleteBtn = li.querySelector('.delete-btn');
+    deleteBtn.addEventListener('click', function() {
+        deleteUser(user);
+        li.remove();
+    });
+}
 
-
-clearBtn.addEventListener('click', function() {
-  pokemonInput.value = '';
-});
-
-
-pokemonInput.addEventListener('keyup', function(event) {
-  if (event.key === 'Enter') {
-    getPokemonInfo(pokemonInput.value.toLowerCase());
-    pokemonInput.value = '';
-  }
-});
-
-
-prevBtn.addEventListener('click', function() {
-  const currentPokemonId = parseInt(document.getElementById('pokemonid').textContent);
-  const prevPokemonId = currentPokemonId - 1;
-  if (prevPokemonId > 0) {
-    getPokemonInfo(prevPokemonId);
-  }
-});
-
-
-nextBtn.addEventListener('click', function() {
-  const currentPokemonId = parseInt(document.getElementById('pokemonid').textContent);
-  const nextPokemonId = currentPokemonId + 1;
-  getPokemonInfo(nextPokemonId);
-});
-
-
+function deleteUser(userToDelete) {
+    users = users.filter(user => user !== userToDelete);
+}

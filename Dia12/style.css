@@ -1,29 +1,9 @@
-/* Estilos para el contenedor de cartas */
-.card-container {
-    display: flex;
-    margin-top: 14vi;
-    margin-left: 27vi;
+.btn-edit {
+    background-color: #007bff; /* Azul */
+    color: #fff; /* Texto blanco */
 }
 
-/* Estilos para las cartas */
-.card {
-    width: 350px;
-    height: 350px;
-    border-radius: 1px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease-in-out;
-}
-.boton{
-    position: absolute;
-    width: 9vi;
-    height: 2vi;
-    font-size: 1vi;
-    background-color: black;
-    color: white;
-    left: 45vi;
-    top: 34vi;
-}
-.card.flipped {
-    transform: rotateY(180deg);
+.btn-delete {
+    background-color: #dc3545; /* Rojo */
+    color: #fff; /* Texto blanco */
 }
